@@ -48,311 +48,312 @@ class Introduction {
 const story = new Introduction();
 console.log("The story of how the web became alive...");`,
         preview: `
-<div class="intro-section">
-    <div class="hero-banner">
-        <div class="title-container">
-            <div class="title-animation">
-                <span class="emoji-star">⭐</span>
+<div class="modern-intro">
+    <div class="hero-section">
+        <div class="particle-background"></div>
+        <div class="content-wrapper">
+            <div class="hero-title">
+                <div class="title-accent"></div>
                 <h1>Making History</h1>
-            </div>
-            <div class="subtitle-container">
-                <h2>The Man Who Changed the Web in 10 Days</h2>
-                <div class="underline"></div>
+                <div class="subtitle">The Man Who Changed the Web</div>
             </div>
         </div>
     </div>
-    
-    <div class="comparison-container">
-        <div class="web-before slide-in-left">
-            <div class="card-header">
-                <span class="icon">📱</span>
-                <h3>Before JavaScript</h3>
-            </div>
-            <div class="static-web">
-                <div class="feature-card">
-                    <div class="icon-wrapper">📄</div>
-                    <p>Static Pages</p>
+
+    <div class="comparison-grid">
+        <div class="era-card before">
+            <div class="card-content">
+                <div class="era-header">
+                    <span class="era-icon">🌅</span>
+                    <h2>Before JavaScript</h2>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-wrapper">🖼️</div>
-                    <p>Just Images</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-wrapper">⛔</div>
-                    <p>No Interaction</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-wrapper">🔒</div>
-                    <p>Limited Features</p>
+                <div class="features-list">
+                    <div class="feature">
+                        <span class="feature-icon">📄</span>
+                        <span class="feature-text">Static Pages</span>
+                        <div class="feature-line"></div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🖼️</span>
+                        <span class="feature-text">Basic Images</span>
+                        <div class="feature-line"></div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⛔</span>
+                        <span class="feature-text">No Interaction</span>
+                        <div class="feature-line"></div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">📱</span>
+                        <span class="feature-text">Limited Features</span>
+                        <div class="feature-line"></div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="comparison-arrow">
-            <div class="arrow-container">
-                <span class="arrow-icon">→</span>
-                <div class="pulse-rings"></div>
-            </div>
+        <div class="divider">
+            <div class="divider-line"></div>
+            <div class="evolution-icon">⚡</div>
+            <div class="divider-line"></div>
         </div>
 
-        <div class="web-after slide-in-right">
-            <div class="card-header">
-                <span class="icon">🚀</span>
-                <h3>After JavaScript</h3>
-            </div>
-            <div class="dynamic-web">
-                <div class="feature-card">
-                    <div class="icon-wrapper">🎮</div>
-                    <p>Interactive</p>
+        <div class="era-card after">
+            <div class="card-content">
+                <div class="era-header">
+                    <span class="era-icon">🚀</span>
+                    <h2>After JavaScript</h2>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-wrapper">🎭</div>
-                    <p>Animated</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-wrapper">🌐</div>
-                    <p>Dynamic</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-wrapper">⚡</div>
-                    <p>Powerful</p>
+                <div class="features-list">
+                    <div class="feature">
+                        <span class="feature-icon">🎮</span>
+                        <span class="feature-text">Interactive</span>
+                        <div class="feature-line"></div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎭</span>
+                        <span class="feature-text">Dynamic</span>
+                        <div class="feature-line"></div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🌐</span>
+                        <span class="feature-text">Connected</span>
+                        <div class="feature-line"></div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">💫</span>
+                        <span class="feature-text">Animated</span>
+                        <div class="feature-line"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <style>
-.intro-section {
-    padding: 40px;
-    background: linear-gradient(135deg, #0a1930 0%, #223759 100%);
+.modern-intro {
+    background: linear-gradient(135deg, #13171F 0%, #202A3C 100%);
     color: white;
-    border-radius: 20px;
-    font-family: 'Arial', sans-serif;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 30px;
     position: relative;
     overflow: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
-.intro-section::before {
-    content: '';
+.particle-background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(247, 223, 30, 0.1), transparent 70%);
-    pointer-events: none;
+    background: radial-gradient(circle at 50% -20%, rgba(247, 223, 30, 0.1), transparent 70%);
+    opacity: 0.6;
+    z-index: 1;
 }
 
-.hero-banner {
+.hero-section {
+    position: relative;
+    padding: 60px 0;
     text-align: center;
-    margin-bottom: 60px;
-    padding: 40px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    position: relative;
-    overflow: hidden;
+    z-index: 2;
 }
 
-.title-container {
-    position: relative;
-}
-
-.emoji-star {
-    font-size: 2.5em;
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: starFloat 3s ease-in-out infinite;
-}
-
-.title-animation h1 {
-    font-size: 3.5em;
-    margin: 20px 0;
-    background: linear-gradient(45deg, #f7df1e, #ff6b6b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: titleGlow 3s ease-in-out infinite;
-}
-
-.subtitle-container {
-    position: relative;
-    display: inline-block;
-}
-
-.subtitle-container h2 {
-    font-size: 1.8em;
-    color: #fff;
-    margin: 0;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
-.underline {
-    height: 3px;
-    width: 0;
-    background: linear-gradient(90deg, transparent, #f7df1e, transparent);
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: expandLine 1.5s ease-out forwards;
-    animation-delay: 1s;
-}
-
-.comparison-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.web-before, .web-after {
-    flex: 1;
-    padding: 30px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-}
-
-.card-header {
-    margin-bottom: 25px;
-    position: relative;
-}
-
-.card-header .icon {
-    font-size: 2em;
-    margin-bottom: 10px;
-    display: inline-block;
-    animation: iconFloat 2s ease-in-out infinite;
-}
-
-.feature-card {
-    background: rgba(255,255,255,0.08);
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 15px;
-    transform: translateY(0);
-    transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.12);
-}
-
-.icon-wrapper {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    animation: iconPulse 2s infinite;
-}
-
-.comparison-arrow {
-    position: relative;
-}
-
-.arrow-container {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.arrow-icon {
-    font-size: 2.5em;
-    color: #f7df1e;
-    animation: arrowPulse 2s infinite;
+.content-wrapper {
     position: relative;
     z-index: 2;
 }
 
-.pulse-rings::before,
-.pulse-rings::after {
-    content: '';
+.hero-title {
+    display: inline-block;
+    position: relative;
+}
+
+.title-accent {
     position: absolute;
-    border: 2px solid #f7df1e;
+    width: 60px;
+    height: 60px;
+    background: #f7df1e;
     border-radius: 50%;
-    animation: ringPulse 2s infinite;
+    filter: blur(30px);
+    opacity: 0.5;
+    top: -20px;
+    left: -20px;
+    animation: pulseAccent 4s ease-in-out infinite;
+}
+
+.hero-title h1 {
+    font-size: 4em;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, #f7df1e 0%, #ff6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.pulse-rings::before {
+.subtitle {
+    font-size: 1.5em;
+    color: #8B9CB3;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards 0.2s;
+}
+
+.comparison-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+    z-index: 2;
+    position: relative;
+}
+
+.era-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.era-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.era-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.era-icon {
+    font-size: 2em;
+}
+
+.era-header h2 {
+    font-size: 1.8em;
+    margin: 0;
+    background: linear-gradient(135deg, #fff 0%, #8B9CB3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature {
+    position: relative;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.feature:nth-child(1) { animation-delay: 0.3s; }
+.feature:nth-child(2) { animation-delay: 0.4s; }
+.feature:nth-child(3) { animation-delay: 0.5s; }
+.feature:nth-child(4) { animation-delay: 0.6s; }
+
+.feature-icon {
+    font-size: 1.4em;
+}
+
+.feature-text {
+    color: #8B9CB3;
+    font-size: 1.1em;
+}
+
+.feature-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #f7df1e, transparent);
+    transition: width 0.3s ease;
+}
+
+.feature:hover .feature-line {
+    width: 100%;
+}
+
+.divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.divider-line {
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, #f7df1e, transparent);
+}
+
+.evolution-icon {
     width: 40px;
     height: 40px;
-}
-
-.pulse-rings::after {
-    width: 40px;
-    height: 40px;
-    animation-delay: 0.5s;
-}
-
-@keyframes starFloat {
-    0%, 100% { transform: translate(-50%, 0); }
-    50% { transform: translate(-50%, -15px); }
-}
-
-@keyframes titleGlow {
-    0%, 100% { text-shadow: 0 0 20px rgba(247, 223, 30, 0.3); }
-    50% { text-shadow: 0 0 30px rgba(247, 223, 30, 0.5); }
+    background: rgba(247, 223, 30, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    animation: pulse 2s infinite;
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes expandLine {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes iconFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
-@keyframes iconPulse {
+@keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 
-@keyframes arrowPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+@keyframes pulseAccent {
+    0% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+    100% { opacity: 0.5; transform: scale(1); }
 }
 
-@keyframes ringPulse {
-    0% { transform: scale(0.5); opacity: 1; }
-    100% { transform: scale(1.5); opacity: 0; }
-}
-
-@keyframes slideInLeft {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-.slide-in-left {
-    animation: slideInLeft 1s ease-out forwards;
-}
-
-.slide-in-right {
-    animation: slideInRight 1s ease-out forwards;
+@media (max-width: 768px) {
+    .comparison-grid {
+        flex-direction: column;
+    }
+    
+    .divider {
+        flex-direction: row;
+    }
+    
+    .divider-line {
+        width: 80px;
+        height: 2px;
+    }
 }
 </style>`
     },
