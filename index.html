@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brendan Eich: JavaScript Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="vscode-container">
+        <div class="title-bar">
+            <span class="title-text">English Oral Presentation - Brendan Eich: JavaScript Creator</span>
+        </div>
+
+        <div class="menu-bar">
+            <div class="menu-item">File</div>
+            <div class="menu-item">Edit</div>
+            <div class="menu-item">View</div>
+            <div class="menu-item">Go</div>
+            <div class="menu-item">Run</div>
+            <div class="menu-item">Terminal</div>
+            <div class="menu-item">Help</div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-icon active">📁</div>
+                <div class="sidebar-icon">🔍</div>
+                <div class="sidebar-icon">🔧</div>
+                <div class="sidebar-icon">⚙️</div>
+            </div>
+
+            <div class="explorer-panel">
+                <div class="panel-header">Brendan Eich Timeline</div>
+                <div class="timeline-container" id="timelineContainer"></div>
+            </div>
+
+            <div class="editor-container">
+                <div class="tabs-container">
+                    <div class="tab active">📄 brendan-eich-story.js</div>
+                </div>
+                <div class="editor-content">
+                    <div class="line-numbers" id="lineNumbers">
+                        <div class="line-number">1</div>
+                    </div>
+                    <div class="code-editor" id="codeEditor">
+                        <div class="code-line" id="currentLine"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <div class="preview-header">🌐 Preview - Live Demo</div>
+                <div class="preview-content">
+                    <iframe class="preview-iframe" id="previewFrame" srcdoc="<!DOCTYPE html><html><head><style>body{font-family:Arial,sans-serif;padding:20px;line-height:1.6;}</style></head><body><h1>Brendan Eich Timeline</h1><p>Select a timeline event to see the story unfold...</p></body></html>"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-left">
+                <span>JavaScript</span>
+                <span>UTF-8</span>
+                <span>CRLF</span>
+            </div>
+            <div class="status-right">
+                <span id="statusText">Ready</span>
+                <span>Line <span id="currentLineNumber">1</span>, Col <span id="currentCol">1</span></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.vscode-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Title Bar */
+.title-bar {
+    background: #3c3c3c;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #555;
+}
+
+.title-text {
+    color: #cccccc;
+}
+
+/* Menu Bar */
+.menu-bar {
+    background: #2d2d30;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.menu-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item:hover {
+    background: #094771;
+    transform: translateY(-1px);
+}
+
+.menu-item:active {
+    transform: translateY(1px);
+}
+
+.menu-item.active {
+    background: #094771;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 90px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 50px;
+    background: #333333;
+    border-right: 1px solid #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.sidebar-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+    font-size: 18px;
+}
+
+.sidebar-icon:hover {
+    background: #2a2d2e;
+}
+
+.sidebar-icon.active {
+    background: #094771;
+}
+
+/* Explorer Panel */
+.explorer-panel {
+    width: 250px;
+    background: #252526;
+    border-right: 1px solid #3e3e42;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    height: 35px;
+    background: #2d2d30;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.timeline-container {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.timeline-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    font-size: 12px;
+}
+
+.timeline-item:hover {
+    background: #2a2d2e;
+    border-left-color: #007acc;
+}
+
+.timeline-item.active {
+    background: #094771;
+    border-left-color: #007acc;
+}
+
+.timeline-year {
+    color: #569cd6;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.timeline-event {
+    color: #d4d4d4;
+    line-height: 1.4;
+}
+
+/* Editor Area */
+.editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-container {
+    height: 35px;
+    background: #2d2d30;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    align-items: center;
+}
+
+.tab {
+    height: 35px;
+    padding: 0 15px;
+    background: #2d2d30;
+    border-right: 1px solid #3e3e42;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tab.active {
+    background: #1e1e1e;
+}
+
+.editor-content {
+    flex: 1;
+    display: flex;
+    height: calc(100vh - 125px); /* Ajustar altura para evitar desbordamiento */
+    overflow: hidden; /* Evitar scroll exterior */
+}
+
+.line-numbers {
+    width: 60px;
+    background: #1e1e1e;
+    border-right: 1px solid #3e3e42;
+    padding: 10px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: right;
+    color: #858585;
+    user-select: none;
+    overflow-y: scroll; /* Cambiar a scroll */
+    scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+    -ms-overflow-style: none; /* Ocultar scrollbar en IE/Edge */
+}
+
+.line-numbers::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar en Chrome/Safari */
+}
+
+.line-number {
+    padding-right: 10px;
+    height: 19.5px;
+}
+
+.code-editor {
+    flex: 1;
+    background: #1e1e1e;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.code-line {
+    min-height: 19.5px;
+    position: relative;
+    white-space: pre-wrap; /* Mantener formato pero permitir wrap */
+    word-break: break-word; /* Mejorar el manejo de palabras largas */
+    padding-right: 15px; /* Espacio para el scroll */
+    max-width: 100%; /* Evitar desbordamiento horizontal */
+}
+
+/* Preview Panel */
+.preview-panel {
+    width: 50%;
+    background: #1e1e1e;
+    border-left: 1px solid #3e3e42;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-header {
+    height: 35px;
+    background: #2d2d30;
+    border-bottom: 1px solid #3e3e42;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 12px;
+}
+
+.preview-content {
+    flex: 1;
+    background: white;
+    overflow: auto;
+}
+
+.preview-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+}
+
+/* Status Bar */
+.status-bar {
+    height: 22px;
+    background: #007acc;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 11px;
+    justify-content: space-between;
+}
+
+.status-left,
+.status-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Syntax Highlighting */
+.keyword {
+    color: #569cd6;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+.number {
+    color: #b5cea8;
+}
+
+.function {
+    color: #dcdcaa;
+}
+
+.variable {
+    color: #9cdcfe;
+}
+
+.property {
+    color: #92c5f5;
+}
+
+.operator {
+    color: #d4d4d4;
+}
+
+/* Typing Animation */
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 15px;
+    background: #007acc;
+    animation: blink 1s infinite;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 7px;
+}
+
+@keyframes typeWriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.typing {
+    border-right: 2px solid #007acc;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
